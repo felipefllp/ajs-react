@@ -2,7 +2,7 @@ export default function App() {
   console.log('Teste no console do navegador');
 
   return (
-    <div>
+    <>
       <header>
         <div className="bg-gray-100 mx-auto p-4">
           <h1 className="text-center font-semibold text-xl">
@@ -16,6 +16,6 @@ export default function App() {
           <h2>O conteúdo fica aqui.</h2>
         </div>
       </main>
-    </div>
+    </>
   );
 }
