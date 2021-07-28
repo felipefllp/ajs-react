@@ -5,31 +5,31 @@ import TextInput from './components/TextInput';
 
 export default function App() {
   
-  const [name, setName] = useState('Felipe');
-  useEffect(() => {
-    document.title = name
-    // return () => {
-    //   cleanup
-    // }
-  }, [name])
+  const [name, setName] = useState('');
+
+  const [vowels, setVowels] = useState('');
 
   function handleNameChange(newName) {
     setName(newName)
+    setVowels(newName.match(/[aeiou]/gi))
   }
 
   return (
     <>
-      <Header>Atividade Prévia</Header>
+      <Header>Atividade Prévia - Filtragem de vogais em texto</Header>
       <Main>
         <TextInput
-          labelDescription="Digite bla bla:"
+          labelDescription="Digite o texto desejado:"
           inputValue={name}
           onInputChange={handleNameChange}
         />
 
-        <p>
-          Seu nome é {name}, com {name.length} caracteres.
+        <p className="text-center">
+          {vowels && vowels.length ? vowels.length : 0} vogais encontradas no texto:
         </p>
+        <div className="vowels-box">
+          {vowels}
+        </div>
       </Main>
     </>
   );

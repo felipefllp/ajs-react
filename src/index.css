@@ -18,3 +18,11 @@ code {
   font-family: 'JetBrains Mono', source-code-pro, Menlo, Monaco, Consolas,
     'Courier New', monospace;
 }
+
+.vowels-box {
+  background-color: #c4ffeb;
+  padding: 4px 8px;
+  border-radius: 6px;
+  min-height: 40px;
+  word-wrap: break-word;
+}
