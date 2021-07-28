@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Header from './components/Header'
 import Main from './components/Main';
 import TextInput from './components/TextInput';
@@ -6,6 +6,12 @@ import TextInput from './components/TextInput';
 export default function App() {
   
   const [name, setName] = useState('Felipe');
+  useEffect(() => {
+    document.title = name
+    // return () => {
+    //   cleanup
+    // }
+  }, [name])
 
   function handleNameChange(newName) {
     setName(newName)
